@@ -19,6 +19,8 @@ public class ClienteUtil {
 		if (!cliente.getCorrentista()) {
 			cliente.setSaldoCc(null);
 			cliente.setScoreCredito(CREDITO_PADRAO);
+		}else if (cliente.getCorrentista() && cliente.getSaldoCc() <= 0){
+			cliente.setScoreCredito(0f);
 		}else if(cliente.getCorrentista() && cliente.getSaldoCc() <= 1000) {
 			cliente.setScoreCredito(CREDITO_PADRAO);
 		} else if(cliente.getSaldoCc() > 1000) {
