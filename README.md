@@ -200,7 +200,7 @@ Cria um novo cliente no sistema.
 
 ### 5. **GET - Score Crédito /api/v1/clientes/score-credito/{id}**
 #### Descrição
-Recupera o score de crédito de um cliente com base no seu ID. O score de crédito é atribuído com um valor padrão de 100,00 para clientes não correntistas ou para aqueles que, sendo correntistas, possuem menos de 1.000,00 em conta. Para os demais clientes, o score corresponde a 10% do saldo em conta.
+Recupera o score de crédito de um cliente com base no seu ID. O score de crédito é atribuído com um valor padrão de 100,00 para clientes não correntistas ou para aqueles que, sendo correntistas, possuem saldo inferior a 1.000,00 em conta. Para os clientes com saldo negativo, o score de crédito será zerado. Para os demais clientes, o score corresponde a 10% do saldo disponível em conta.
 
 #### Parâmetros
 | Nome  | Descrição       | Tipo     |
